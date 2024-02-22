@@ -6,10 +6,18 @@ public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed = 6;
     public Vector3 cameraVel;
+    private PlayerController player;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     void Update()
     {
-        transform.position += Vector3.forward * cameraSpeed * Time.deltaTime;
-        cameraVel= Vector3.forward * cameraSpeed * Time.deltaTime;
+        if (player.finish) return;
+        if(player.canMove)
+        transform.position += Vector3.forward * cameraSpeed ;
+        cameraVel= Vector3.forward * cameraSpeed ;
     }
 }
