@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canMove, gameOver, finish;
+
+    public GameObject breakablePlayer;
+
     void Awake()
     {
         myRb = GetComponent<Rigidbody>();
@@ -33,12 +36,18 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Time.timeScale = 1f;
+                Time.fixedDeltaTime = Time.timeScale * 0.02f;
             }
         }
         else if (!canMove && !finish)
         {
             if (Input.GetMouseButtonDown(0))
+            {
+                FindObjectOfType<GameManager>().RemoveUI();
                 canMove = true;
+            }
+
         }
     }
     void FixedUpdate()
@@ -70,10 +79,25 @@ public class PlayerController : MonoBehaviour
     }
     void GameOver()
     {
+        GameObject shatterShpere = Instantiate(breakablePlayer, transform.position, Quaternion.identity);
+
+        foreach (Transform o in shatterShpere.transform)
+        {
+            //o.GetComponent<Rigidbody>().
+            //    AddForce(Vector3.forward * myRb.velocity.magnitude, ForceMode.Impulse);
+
+            o.GetComponent<Rigidbody>().
+                AddForce(Vector3.forward * 5, ForceMode.Impulse);
+        }
+
         canMove = false;
         gameOver = true;
         GetComponent<MeshRenderer>().enabled = false;
+        GetComponentInChildren<TrailRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+
+        Time.timeScale = .3f;
+        Time.fixedDeltaTime = Time.timeScale * 0.02f;
     }
 
 
@@ -81,6 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         if (target.gameObject.tag == "Enemy")
         {
+            if(!gameOver)
             GameOver();
         }
     }
@@ -91,7 +116,7 @@ public class PlayerController : MonoBehaviour
         finish = true;
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
         yield return new WaitForSeconds(1);
-       
+
         canMove = false;
         SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("Level"));
     }
