@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour
     {
 
         finish = true;
+        MusicPlayer.instance.Finish();
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level", 1) + 1);
         yield return new WaitForSeconds(1);
 

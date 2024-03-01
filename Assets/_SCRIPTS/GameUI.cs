@@ -19,6 +19,7 @@ public class GameUI : MonoBehaviour
     {
         _btnSettings.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             SceneManager.LoadScene(0);
         });
 

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
         currentLevelText = GameObject.Find("CurrentLevelText").GetComponent<TMP_Text>();
         nextLevelText = GameObject.Find("NextLevelText").GetComponent<TMP_Text>();
         fill = GameObject.Find("Fill").GetComponent<Image>();

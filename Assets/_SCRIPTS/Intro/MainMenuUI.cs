@@ -17,9 +17,13 @@ public class MainMenuUI : MonoBehaviour
 
     private void Awake()
     {
-       
-        SetValues();
+
+        Application.targetFrameRate = 60;
         SetButtons();
+    }
+    private void Start()
+    {
+        SetValues();
     }
 
     private void SetValues()
@@ -36,6 +40,7 @@ public class MainMenuUI : MonoBehaviour
     {
         _btnPlay.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
         });
 
@@ -46,23 +51,29 @@ public class MainMenuUI : MonoBehaviour
         });
         _btnSound.onClick.AddListener(() =>
         {
+             
             PlayerPrefs.SetInt("Sound", PlayerPrefs.GetInt("Sound",1) == 1 ? 0 : 1);
             SetSoundSprite();
+            if (PlayerPrefs.GetInt("Sound", 1) == 1) MusicPlayer.instance.Click();
         });
         _btnAbout.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             _panelAbout.SetActive(true);
         });
         _btnAboutX.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             _panelAbout.SetActive(false);
         });
         _btnReset.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             _panelReset.SetActive(true);
         });
         _btnResetNo.onClick.AddListener(() =>
         {
+            MusicPlayer.instance.Click();
             _panelReset.SetActive(false);
         });
 
@@ -78,11 +89,13 @@ public class MainMenuUI : MonoBehaviour
     {
         bool temp = PlayerPrefs.GetInt("Music", 1) == 1;
         _imgBtnMusic.sprite = temp == true ? _sptMusicOn : _sptMusicOff;
+        MusicPlayer.instance.RefreshVolume();
     }
 
     void SetSoundSprite()
     {
         bool temp = PlayerPrefs.GetInt("Sound", 1) == 1;
         _imgBtnSound.sprite = temp == true ? _sptSoundOn : _sptSoundOff;
+        MusicPlayer.instance.RefreshVolume();
     }
 }
