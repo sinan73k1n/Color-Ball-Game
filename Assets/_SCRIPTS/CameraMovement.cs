@@ -7,7 +7,6 @@ public class CameraMovement : MonoBehaviour
     public float cameraSpeed = 6;
     public Vector3 cameraVel;
     private PlayerController player;
-
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();

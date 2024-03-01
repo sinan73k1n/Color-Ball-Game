@@ -10,8 +10,14 @@ public class MoveLeftAndRight : MonoBehaviour
 
     public bool right, dontMove;
     private bool stop;
+    private GameManager gm;
+    private void Awake()
+    {
+        gm = FindAnyObjectByType<GameManager>();
+    }
     void Start()
     {
+        gm = FindAnyObjectByType<GameManager>();
         maxX = transform.position.x + distance;
         minX = transform.position.x - distance;
     }

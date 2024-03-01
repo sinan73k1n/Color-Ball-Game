@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private TextMesh levelNumber;
     private PlayerController playerController;
 
+
     void Awake()
     {
         currentLevelText = GameObject.Find("CurrentLevelText").GetComponent<TMP_Text>();
