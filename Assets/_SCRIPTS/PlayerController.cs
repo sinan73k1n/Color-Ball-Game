@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         canMove = false;
-        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("Level"));
+        SceneManager.LoadScene(1);//Next level
     }
 
     private void OnTriggerEnter(Collider target)

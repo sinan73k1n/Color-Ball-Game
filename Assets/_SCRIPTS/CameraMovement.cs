@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (player.finish) return;
         if(player.canMove)
-        transform.position += Vector3.forward * cameraSpeed ;
-        cameraVel= Vector3.forward * cameraSpeed ;
+        transform.position += Vector3.forward * cameraSpeed*Time.deltaTime ;
+        cameraVel= Vector3.forward * cameraSpeed*Time.deltaTime ;
     }
 }

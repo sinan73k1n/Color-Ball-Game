@@ -41,7 +41,8 @@ public class MainMenuUI : MonoBehaviour
         _btnPlay.onClick.AddListener(() =>
         {
             MusicPlayer.instance.Click();
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
+          //  SceneManager.LoadScene(PlayerPrefs.GetInt("Level", 1));
+            SceneManager.LoadScene(1);
         });
 
         _btnMusic.onClick.AddListener(() =>
@@ -81,6 +82,10 @@ public class MainMenuUI : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
             SceneManager.LoadScene(0);
+        });
+        _btnExit.onClick.AddListener(() =>
+        {
+            Application.Quit();
         });
 
     }
