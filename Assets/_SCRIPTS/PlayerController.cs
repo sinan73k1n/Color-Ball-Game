@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -bounds, bounds), transform.position.y, transform.position.z);
         if (canMove)
-            transform.position += FindObjectOfType<CameraMovement>().cameraVel;
+            transform.position += FindObjectOfType<BaseMovement>().cameraVel;
 
 
 
