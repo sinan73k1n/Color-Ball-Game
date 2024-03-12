@@ -6,7 +6,8 @@ public class Terminator : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy"|| other.tag == "White")
+        DestroyableObject temp = other.gameObject.GetComponent<DestroyableObject>();
+        if (temp!=null)
         {
             Destroy(other.gameObject);
         }

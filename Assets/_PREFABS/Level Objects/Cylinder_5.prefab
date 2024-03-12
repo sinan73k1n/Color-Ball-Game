@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2857198612472757154}
   - component: {fileID: -3904281576287091715}
   - component: {fileID: -1033001932494470618}
+  - component: {fileID: 7252739334391347109}
   m_Layer: 0
   m_Name: Cylinder_5
   m_TagString: Untagged
@@ -134,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7252739334391347109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67862583546079344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea460435830c942b1b3e553cc3edc534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

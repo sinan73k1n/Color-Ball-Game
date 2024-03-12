@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3762871385401476982}
   - component: {fileID: -8282609788944612957}
   - component: {fileID: 5861662810566034328}
+  - component: {fileID: -4449063758788406021}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -134,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4449063758788406021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176620427109248588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea460435830c942b1b3e553cc3edc534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

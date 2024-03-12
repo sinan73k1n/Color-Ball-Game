@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7689235610816381057}
   - component: {fileID: 7689235610816381116}
   - component: {fileID: -3301904323848769797}
+  - component: {fileID: -9054711571541538258}
   m_Layer: 0
   m_Name: Prism
   m_TagString: White
@@ -157,3 +158,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300010, guid: eb316465c8141a24a9be26eb92484fba, type: 3}
+--- !u!114 &-9054711571541538258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689235610816381059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea460435830c942b1b3e553cc3edc534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

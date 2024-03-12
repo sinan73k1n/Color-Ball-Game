@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8829722319232364484}
   - component: {fileID: 2540963266502600317}
   - component: {fileID: 7404288429354762955}
+  - component: {fileID: -7052156642686214941}
   m_Layer: 0
   m_Name: Prism_3_2
   m_TagString: Untagged
@@ -134,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7052156642686214941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535111555331057703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea460435830c942b1b3e553cc3edc534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
